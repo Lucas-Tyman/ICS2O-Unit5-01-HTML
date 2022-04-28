@@ -11,9 +11,22 @@ if (navigator.serviceWorker) {
   })
 }
 
+;("use strict")
+
 /**
- * This function displays an alert.
+ * This function checks if you guessed the right number.
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function check() {
+  // input
+  var guess = parseInt(document.getElementById("slider").value)
+
+  // process and output
+  var random = Math.floor(Math.random() * 6) + 1
+  if (guess == random) {
+    document.getElementById("answers").innerHTML = "You are correct!"
+  }
+
+  if (guess != random) {
+    document.getElementById("answers").innerHTML = "You are incorrect!"
+  }
 }
