@@ -1,6 +1,8 @@
 // Created by: Lucas Tyman
-// Created on: Apr 2022
+// Created on: May 2022
 // This file contains the JS functions for index.html
+
+"use strict"
 
 /**
  * Check service worker.
@@ -11,17 +13,17 @@ if (navigator.serviceWorker) {
   })
 }
 
-;("use strict")
-
 /**
  * This function checks if you guessed the right number.
  */
 function check() {
   // input
+  const random = Math.floor(Math.random() * 6) + 1
   var guess = parseInt(document.getElementById("slider").value)
 
   // process and output
-  var random = Math.floor(Math.random() * 6) + 1
+  document.getElementById("random").innerHTML = random
+  
   if (guess == random) {
     document.getElementById("answers").innerHTML = "You are correct!"
   }
