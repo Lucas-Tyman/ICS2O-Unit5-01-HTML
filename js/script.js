@@ -23,7 +23,7 @@ function check() {
 
   // process and output
   document.getElementById("random").innerHTML = random
-  
+
   if (guess == random) {
     document.getElementById("answers").innerHTML = "You are correct!"
   }
